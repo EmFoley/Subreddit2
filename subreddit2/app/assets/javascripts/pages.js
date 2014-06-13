@@ -6,8 +6,7 @@ $( document ).ready(function() {
 
 $('#subpicker').submit(function(){
         var counter = 0;
-        var postsArray = $('.posts').data("data");
-        $.each(postsArray, function(i, item){
+        $.each(@list_array, function(i, item){
           // if ( i < 20 ) return;
           $("#posts").append( '<div class="indv-post" id="number'+ counter+'">' + '<button id="move-up" type="button">' + 'Move Up' + '</button>' + '<button id="move-down" type="button">' + 'Move Down' + '</button>' +
             '<ul>' + '<li>' + item.data.title + '</li>' + item.data.url  + '</li>' + '<li>' + item.data.permalink + '</li>' + '</ul>' + 
