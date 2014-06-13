@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>Emily's Subreddit Reader</title>
+  <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:300,400,700' rel='stylesheet' type='text/css'>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+</head>
+<body>
+  <div class="container">  
+    <h1>THE SUBREDDIT READER: ALL TECH. ALL THE TIME.</h1> 
+    <div class="button" id="view"><a href="#"><span class="button-txt">View that Tech Talk!</span></a>
+    </div>      
+    <div class="posts" data= <% @list_array %> id="posts">
+        <form id="login">
+          Username: <input type="text" name="user">
+          Password: <input type="password" name="passwd"> 
+          <input type="submit" id="login" value="Log In to Reddit">
+        </form>
+        <form id="subpicker">
+          What Subreddit Do You Want?: <input type="text" name="subreddit">
+          <input type="submit" value="Read Some Posts!">
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
