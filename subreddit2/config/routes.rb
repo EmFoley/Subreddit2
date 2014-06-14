@@ -6,6 +6,8 @@ Subreddit2::Application.routes.draw do
 
  resources :pages, only: [:index]
 
+ post '/get_subreddits', to: 'pages#get_subreddits', as: 'get_subreddits'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
