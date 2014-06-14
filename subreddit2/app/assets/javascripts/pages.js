@@ -2,23 +2,12 @@ $( document ).ready(function() {
   $('#view').click(function(){
     $('#posts').slideToggle("slow");
   });
+  $('.reddit_auth').on('click', function(){
+    window.location = 'https://ssl.reddit.com/api/v1/authorize?client_id=6kOddZTzRQ0YNA&response_type=code&state=random&redirect_uri=http://localhost:3000/&duration=temporary&scope=identity,read,vote,submit';
+  });
 });
 
-$('#subpicker').submit(function(){
-        var counter = 0;
-        var postsArray = $('.posts').data("data");
-        $.each(postsArray, function(i, item){
-          // if ( i < 20 ) return;
-          $("#posts").append( '<div class="indv-post" id="number'+ counter+'">' + '<button id="move-up" type="button">' + 'Move Up' + '</button>' + '<button id="move-down" type="button">' + 'Move Down' + '</button>' +
-            '<ul>' + '<li>' + item.data.title + '</li>' + item.data.url  + '</li>' + '<li>' + item.data.permalink + '</li>' + '</ul>' + 
-                    '<div class="vote-up-div">' + '<button id="voteup" type="button">' + 'Vote up!' + '</button>' + '<div class="counter" id="voteup">' + '</div>' + 
-                  '</div>' + '<div class="vote-down-div"> '+ '<button id="votedown" type="button">' + 'Vote down!'  + '</button>' +
-              '<div class="counter" id="countdown">' + '</div>' + '</div>' +
-            '</div>');
-          counter++;
-        });
-      });
- 
+
 
 
 $(document).on("click", ".vote-up-div", function(){
