@@ -3,29 +3,19 @@ $( document ).ready(function() {
     window.location = 'https://ssl.reddit.com/api/v1/authorize?client_id=6kOddZTzRQ0YNA&response_type=code&state=random&redirect_uri=http://localhost:3000/&duration=temporary&scope=identity,read,vote,submit';
   });
 });
+  
 
   $(document).on("submit", "#subpicker", function(e){
     e.preventDefault;
-    $.ajax({
-      type: "POST",
-      url: '/get_subreddits',
-      dataType: "json",
-      data: {subreddit: "dogecoin"}
-    })
     // var subreddit = $('.reddit_input').val();
+    $.ajax({
+         type: "POST",
+         url: '/get_subreddits',
+         dataType: "json",
+         data: {subreddit: "dogecoin"}
+       })
 
-    // $.ajax({
-    //   type: "GET",
-    //   url: "http://www.google.com"
-    // }).success(function(xhr){
-    //   console.log("successs");
-    //   debugger;
-    // }).fail(function(xhr) {
-    //   console.log("something went horribly wrong.");
-    //   debugger;
-    // });
-
-       // $.getJSON('http://www.reddit.com/r/dogecoin/new/.json?callback=?',function(data){
+       // $.getJSON("http://www.reddit.com/r/"+subreddit+"/new/.json?callback=?",function(data){
        //  var counter = 0;
        //   $.each(data.data.children, function(i, item){
        //        $("#posts").append( '<div class="indv-post" id="number'+ counter+'">' + '<button id="move-up" type="button">' + 'Move Up' + '</button>' + '<button id="move-down" type="button">' + 'Move Down' + '</button>' +
@@ -38,37 +28,6 @@ $( document ).ready(function() {
        //        counter++;
        //      });
        //    });
-      });
-
-
-  $(document).on("submit", "#subpicker", function(e){
-    e.preventDefault;
-    var subreddit = $('.reddit_input').val();
-
-    // $.ajax({
-    //   type: "GET",
-    //   url: "http://www.google.com"
-    // }).success(function(xhr){
-    //   console.log("successs");
-    //   debugger;
-    // }).fail(function(xhr) {
-    //   console.log("something went horribly wrong.");
-    //   debugger;
-    // });
-
-       $.getJSON("http://www.reddit.com/r/"+subreddit+"/new/.json?callback=?",function(data){
-        var counter = 0;
-         $.each(data.data.children, function(i, item){
-              $("#posts").append( '<div class="indv-post" id="number'+ counter+'">' + '<button id="move-up" type="button">' + 'Move Up' + '</button>' + '<button id="move-down" type="button">' + 'Move Down' + '</button>' +
-                '<ul>' + '<li>' + item.data.title + '</li>' + item.data.url  + '</li>' + '<li>' + item.data.permalink + '</li>' + '</ul>' + 
-                      '<div class="vote-up-div">' + '<button id="voteup" type="button">' + 'Vote up!' + '</button>' + '<div class="counter" id="voteup">' + '<p></p>' + '</div>' + 
-                      '<div class="vote-up-div">' + '<button id="voteup" type="button">' + 'Vote up!' + '</button>' + '<div class="counter" id="voteup">' + '</div>' + 
-                      '</div>' + '<div class="vote-down-div"> '+ '<button id="votedown" type="button">' + 'Vote down!'  + '</button>' +
-                  '<div class="counter" id="countdown">' + '</div>' + '</div>' +
-                '</div>');
-              counter++;
-            });
-          });
       });
 
 

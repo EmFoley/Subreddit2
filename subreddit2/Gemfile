@@ -35,6 +35,8 @@ end
 gem 'snoo'
 gem 'debugger'
 gem 'httparty'
+gem 'pry'
+gem 'rb-readline'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
