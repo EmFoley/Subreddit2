@@ -5,9 +5,8 @@ class PagesController < ApplicationController
   end
 
   def get_subreddits
-    respond_to do |format|
-      format.js { render :json => {cat: "meow"} }
-    end
+    p params
+    render :json => params[:q]
   end
 
 end
