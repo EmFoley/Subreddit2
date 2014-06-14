@@ -5,8 +5,23 @@ $( document ).ready(function() {
   $('.reddit_auth').on('click', function(){
     window.location = 'https://ssl.reddit.com/api/v1/authorize?client_id=6kOddZTzRQ0YNA&response_type=code&state=random&redirect_uri=http://localhost:3000/&duration=temporary&scope=identity,read,vote,submit';
   });
-});
+  $('#subpicker').submit(function(event){
+    event.preventDefault;
+    // var subreddit = $('.reddit_input').val();
+    // $('.reddit_input').val("");
+    $.ajax({
+      url:'http://www.reddit.com/r/dogecoin/new/.json',
+      type: 'GET'
+    }).success(function(){
+      console.log("got it")
+    }).fail(function(){
+      console.log("failed")
+    });
 
+
+  });
+
+  });
 
 
 
