@@ -5,8 +5,9 @@ class PagesController < ApplicationController
   end
 
   def get_subreddits
-    p params
-    render :json => params[:q]
+    respond_to do |format|
+      format.html
+    end
   end
 
 end
