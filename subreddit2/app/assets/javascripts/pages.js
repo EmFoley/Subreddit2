@@ -4,7 +4,11 @@ $( document ).ready(function() {
   });
 });
   
+  $(document).on("click", "#test", function(){
+    $('#posts').append
+  });
 
+  // $("#comments_<%=@comment.post.id %>").append("<%= escape_javascript("#{render :partial => 'posts/comment', :locals => { :comment => @comment }}").html_safe %>");
   // $(document).on("submit", "#subpicker", function(){
     // var subreddit = $('.reddit_input').val();
     // $.ajax({
