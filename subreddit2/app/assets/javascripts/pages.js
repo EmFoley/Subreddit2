@@ -5,15 +5,14 @@ $( document ).ready(function() {
 });
   
 
-  $(document).on("submit", "#subpicker", function(e){
-    e.preventDefault;
+  // $(document).on("submit", "#subpicker", function(){
     // var subreddit = $('.reddit_input').val();
-    $.ajax({
-         type: "POST",
-         url: '/get_subreddits',
-         dataType: "json",
-         data: {subreddit: "dogecoin"}
-       })
+    // $.ajax({
+    //      type: "POST",
+    //      url: '/get_subreddits',
+    //      dataType: "jsonp",
+    //      crossDomain: true
+    //    });
 
        // $.getJSON("http://www.reddit.com/r/"+subreddit+"/new/.json?callback=?",function(data){
        //  var counter = 0;
@@ -28,7 +27,7 @@ $( document ).ready(function() {
        //        counter++;
        //      });
        //    });
-      });
+      // });
 
 
 

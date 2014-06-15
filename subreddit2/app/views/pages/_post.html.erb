@@ -1,12 +1,12 @@
 
-
+<%= @response.each do |item| %>
 <div class="indv-post">
   <button id="move-up" type="button">Move Up</button>
   <button id="move-down" type="button">Move Down</button>
     <ul>
-      <li>item.data.title</li>
-      <li>item.data.url</li>
-      <li>item.data.permalink</li>
+      <li><%= item["title"] %></li>
+      <li> <%= item["url"] %></li>
+      <li> <%= item["permalink"] %></li>
     </ul>
   <div class="vote-up-div">
     <button id="voteup" type="button">Vote up!</button>
@@ -17,3 +17,4 @@
     <div class="counter" id="countdown"></div>
   </div>
 </div>
+<% end %>
