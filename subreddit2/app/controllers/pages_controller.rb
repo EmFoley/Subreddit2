@@ -5,9 +5,9 @@ class PagesController < ApplicationController
 
   
   def get_subreddits
-    reddit = Snoo::Client.new
-    subreddit = params[:q]
-    @response = reddit.get_listing({subreddit: subreddit, page: 'new', limit: 20})['data']['children']
+    # reddit = Snoo::Client.new
+    # subreddit = params[:q]
+    # @response = reddit.get_listing({subreddit: subreddit, page: 'new', limit: 20})['data']['children']
   end
 
 

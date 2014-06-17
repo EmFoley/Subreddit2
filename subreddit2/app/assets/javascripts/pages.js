@@ -4,9 +4,9 @@ $( document ).ready(function() {
   });
 });
   
-  $(document).on("click", "#test", function(){
-    $('#posts').append
-  });
+  // $(document).on("click", "#test", function(){
+  //   $('#posts').append
+  // });
 
   // $("#comments_<%=@comment.post.id %>").append("<%= escape_javascript("#{render :partial => 'posts/comment', :locals => { :comment => @comment }}").html_safe %>");
   // $(document).on("submit", "#subpicker", function(){
@@ -18,20 +18,23 @@ $( document ).ready(function() {
     //      crossDomain: true
     //    });
 
-       // $.getJSON("http://www.reddit.com/r/"+subreddit+"/new/.json?callback=?",function(data){
-       //  var counter = 0;
-       //   $.each(data.data.children, function(i, item){
-       //        $("#posts").append( '<div class="indv-post" id="number'+ counter+'">' + '<button id="move-up" type="button">' + 'Move Up' + '</button>' + '<button id="move-down" type="button">' + 'Move Down' + '</button>' +
-       //          '<ul>' + '<li>' + item.data.title + '</li>' + item.data.url  + '</li>' + '<li>' + item.data.permalink + '</li>' + '</ul>' + 
-       //                '<div class="vote-up-div">' + '<button id="voteup" type="button">' + 'Vote up!' + '</button>' + '<div class="counter" id="voteup">' + '<p></p>' + '</div>' + 
-       //                '<div class="vote-up-div">' + '<button id="voteup" type="button">' + 'Vote up!' + '</button>' + '<div class="counter" id="voteup">' + '</div>' + 
-       //                '</div>' + '<div class="vote-down-div"> '+ '<button id="votedown" type="button">' + 'Vote down!'  + '</button>' +
-       //            '<div class="counter" id="countdown">' + '</div>' + '</div>' +
-       //          '</div>');
-       //        counter++;
-       //      });
-       //    });
-      // });
+    $(document).on("submit", "#subpicker", function(){
+      var subreddit = $('#reddit_input').val(); 
+       $.getJSON("http://www.reddit.com/r/"+subreddit+"/new/.json?callback=?",function(data){
+        var counter = 0;
+         $.each(data.data.children, function(i, item){
+          if ( i > 20 ) return;
+              $("#posts").append( '<div class="indv-post" id="number'+ counter+'">' + '<button id="move-up" type="button">' + 'Move Up' + '</button>' + '<button id="move-down" type="button">' + 'Move Down' + '</button>' +
+                '<ul>' + '<li>' + item.data.title + '</li>' + item.data.url  + '</li>' + '<li>' + item.data.permalink + '</li>' + '</ul>' + 
+                      '<div class="vote-up-div">' + '<button id="voteup" type="button">' + 'Vote up!' + '</button>' + '<div class="counter" id="voteup">' + '<p></p>' + '</div>' + 
+                      '<div class="vote-up-div">' + '<button id="voteup" type="button">' + 'Vote up!' + '</button>' + '<div class="counter" id="voteup">' + '</div>' + 
+                      '</div>' + '<div class="vote-down-div"> '+ '<button id="votedown" type="button">' + 'Vote down!'  + '</button>' +
+                  '<div class="counter" id="countdown">' + '</div>' + '</div>' +
+                '</div>');
+              counter++;
+            });
+          });
+      });
 
 
 
