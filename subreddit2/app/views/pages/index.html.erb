@@ -10,15 +10,17 @@
 <body>
   <div class="container">  
     <h1>THE SUBREDDIT READER: ALL TECH. ALL THE TIME.</h1> 
-    <div class="button" id="view"><a href="#"><span class="button-txt">View that Tech Talk!</span></a>
+    <div class="button" id="view">
+      <a href="#"><span class="button-txt">View that Tech Talk!</span></a>
     </div>      
     <button class="reddit_auth" type="button">Click Here to Login</button>
-    <div class="posts" id="posts">
-      <%= form_tag get_subreddits_path, method: "post", remote: true do %> 
-        <%= label_tag(:q, "What Subreddit Do You Want?:" ) %>
-        <%= text_field_tag(:q) %>
-        <%= submit_tag("View Posts") %>
-      <% end %>
+      <div class="posts" id="posts">
+      
+       <!--  <button id="test" type="button">Test</button> -->
+       <form id="subpicker">
+          What Subreddit Do You Want?: <input type="text" id="reddit_input" name="subreddit">
+         <input type="submit" value="Read Some Posts!">
+        </form>
       </div>
     </div>
   </div>
